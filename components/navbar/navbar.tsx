@@ -1,37 +1,44 @@
 import { Button } from "@/components/ui/button";
-import { GithubLogo, XLogo } from "../icons";
 import { Logo } from "./logo";
+import Link from "next/link";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
+import ThemeToggle from "./theme-toggle";
+import { MobileMenu } from "./mobile-menu";
+
+
+const MobileNav = () => {
+  return (
+     <div className="mobile-navigation">
+    <h2>Mobile Nav Menu</h2>
+  </div>
+  )
+}
+
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-10 top-6 inset-x-4 h-14 bg-background border dark:border-slate-700/70 max-w-screen-md mx-auto rounded-full">
-      <div className="h-full flex items-center justify-between mx-auto px-3">
-        <Logo />
+    <nav className="fixed z-10 top-6 inset-x-4 h-14 xs:h-16 bg-background/50 backdrop-blur-sm border dark:border-slate-700/70 max-w-screen-xl mx-auto rounded-full">
+      <div className="h-full flex items-center justify-between mx-auto px-4">
+        
+        <Link href="/">
+          <h2 className="font-bold hover:opacity-50 transition">KeelanJon</h2>
+        </Link> 
 
         {/* Desktop Menu */}
         <NavMenu className="hidden md:block" />
 
-        <div className="flex items-center gap-2">
-          <Button
-            variant="outline"
-            className="hidden sm:inline-flex rounded-full shadow-none"
-            size="icon"
-          >
-            <XLogo />
-          </Button>
-          <Button
-            variant="outline"
-            className="rounded-full shadow-none"
-            size="icon"
-          >
-            <GithubLogo className="h-5! w-5!" />
-          </Button>
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <Link href="/contact">
+            <Button variant="outline" className="hidden sm:inline-flex rounded-full cursor-pointer">
+              Start Project
+            </Button>
+          </Link>
 
           {/* Mobile Menu */}
           <div className="md:hidden">
-            <NavigationSheet />
+            <MobileMenu />
           </div>
         </div>
       </div>
