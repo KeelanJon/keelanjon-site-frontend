@@ -1,8 +1,5 @@
-import appleLogo from "../public/logos/apple-logo.svg"
 import Image from "next/image"
-import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
-import { div } from "motion/react-client";
 import BloodBikesWales from "../public/logos/blood-bikes-wales.svg"
 import FireIceLogo from "../public/logos/fireandicefilmslogo.png"
 import LivingFullyLogo from "../public/logos/livingfully-logo.png"

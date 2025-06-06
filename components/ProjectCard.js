@@ -7,8 +7,6 @@ import { GithubLogo } from "./icons"
 import Link from "next/link"
 
 export default function ProjectCard(props) {
-  const data = props.data
-
   const {
     id,
     title,
@@ -26,7 +24,10 @@ export default function ProjectCard(props) {
   const projectSlug = slug ? `/work/${slug}` : ""
 
   return (
-    <div className="group relative flex flex-col h-full overflow-hidden rounded-xl border border-accent transition-all hover:border-primary/50">
+    <div
+      key={id}
+      className="group relative flex flex-col h-full overflow-hidden rounded-xl border border-accent transition-all hover:border-primary/50"
+    >
       {/* Project Image */}
       <Link
         href={projectSlug}

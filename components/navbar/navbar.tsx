@@ -1,19 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Logo } from "./logo";
 import Link from "next/link";
 import { NavMenu } from "./nav-menu";
-import { NavigationSheet } from "./navigation-sheet";
 import ThemeToggle from "./theme-toggle";
 import { MobileMenu } from "./mobile-menu";
-
-
-const MobileNav = () => {
-  return (
-     <div className="mobile-navigation">
-    <h2>Mobile Nav Menu</h2>
-  </div>
-  )
-}
 
 
 const Navbar = () => {

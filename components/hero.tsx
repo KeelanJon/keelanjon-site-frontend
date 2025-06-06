@@ -1,9 +1,7 @@
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { CircleArrowDown, Zap } from "lucide-react";
-import { IoArrowDownCircleOutline, IoArrowForwardCircleOutline } from "react-icons/io5";
+import {  Zap } from "lucide-react";
 import KeelanImage from "../public/keelanjon-square.jpg"
 import Image from "next/image";
 import Logos from "./logos";
@@ -20,10 +18,10 @@ const Hero = () => {
           Frontend Engineer
         </Badge>
         <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-          I'm Keelan, Freelance <div></div> <TypingText/>
+          Im Keelan, Freelance <div></div> <TypingText/>
         </h1>
         <p className="mt-6 text-[14px] md:text-lg">
-            I'm a Web Developer and creative generalist offering 
+            Im a Web Developer and creative generalist offering 
             end-to-end digital solutions for businesses. 
             My core focus is on building high-performance websites 
             with SEO and user experience in mind. 

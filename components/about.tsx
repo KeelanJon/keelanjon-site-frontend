@@ -22,15 +22,15 @@ const About = () => {
             </Badge>
             <ProfileImage className="mt-3 mb-8 block md:hidden" />
             <h2 className="text-4xl font-bold mb-4 tracking-tight">
-              I'm passionate about design, code and tech.
+              Im passionate about design, code and tech.
             </h2>
       
             <p className="text-muted-foreground mb-6 text-justify">
-              I’m a web developer and creative generalist based in South Wales, UK, 
+              Im a web developer and creative generalist based in South Wales, UK, 
               with <b>5+ years of experience.</b> I build fast, modern websites focused on 
               UX, responsive design, and SEO—helping businesses grow online. I also
                have a background in 3D art, creating visuals for web, games, and 
-               film. As a content creator, I’ve grown a following of over 200,000+
+               film. As a content creator, Ive grown a following of over 200,000+
                fellow creatives, sharing free educational content.
             </p>
 

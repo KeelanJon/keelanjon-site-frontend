@@ -25,7 +25,7 @@ export function MobileMenu() {
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
             <DrawerTitle>My Hours</DrawerTitle>
-            <DrawerDescription>I'm active between 8am - 5pm GMT. <br></br>Maybe longer with some coffee...</DrawerDescription>
+            <DrawerDescription>Im active between 8am - 5pm GMT. <br></br>Maybe longer with some coffee...</DrawerDescription>
           </DrawerHeader>
      
           <DrawerFooter>

@@ -1,6 +1,5 @@
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { BlueSkyLogo, DribbleLogo, GithubLogo, XLogo } from "./icons";
 import { FaYoutube } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
 import { Logo } from "./navbar/logo";
