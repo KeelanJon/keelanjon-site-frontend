@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   try {
     // console.log(seoBlock)
     // console.log(project.featuredImage.formats.medium)
-    console.log(project)
+    // console.log(project)
 
     const seoImage = project.featuredImage.formats.medium
 
