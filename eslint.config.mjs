@@ -10,11 +10,12 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-  {
-    extends: ["next/core-web-vitals", "next/typescript"],
-    rules: { "@typescript-eslint/no-empty-object-type": "off" },
-  },
+  ...compat.config({
+    extends: ["next", "next/core-web-vitals", "next/typescript"],
+    rules: {
+      "@typescript-eslint/no-empty-object-type": "off",
+    },
+  }),
 ]
 
 export default eslintConfig
