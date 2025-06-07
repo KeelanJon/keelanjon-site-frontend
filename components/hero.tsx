@@ -5,6 +5,7 @@ import KeelanImage from "../public/keelanjon-square.jpg"
 import Image from "next/image";
 import Logos from "./logos";
 import TypingText from "./typingText";
+import Link from "next/link";
 
 
 const Hero = () => {
@@ -26,12 +27,16 @@ const Hero = () => {
             with SEO and user experience in mind. 
         </p>
         <div className="mt-8 flex items-center justify-center gap-4 ">
-          <Button variant="outline" size="lg" className="rounded-full text-base cursor-pointer transition-colors ease-in-out">
-            About me
-          </Button> 
-          <Button variant="outline" size="lg" className="rounded-full text-base cursor-pointer transition-colors">
-            My Work
-          </Button> 
+          <Link href="/work">
+            <Button variant="outline" size="lg" className="rounded-full text-base cursor-pointer transition-colors ease-in-out">
+              View my work
+            </Button> 
+          </Link>
+          <Link href="/contact">
+            <Button variant="outline" size="lg" className="rounded-full text-base cursor-pointer transition-colors">
+              Get in touch
+            </Button> 
+          </Link>
         </div>
         <div className="max-w-64 md:max-w-full mx-auto mt-12">
           <p className="mb-4 text-sm">Trusted by my clients</p>

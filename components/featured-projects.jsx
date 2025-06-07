@@ -17,8 +17,10 @@ export default function FeaturedProjects(props) {
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
             Featured Work
           </h2>
-          <p className="text-muted-foreground mt-2 sm:mt-4 text-lg">
-            Showcasing some of my best projects and technical achievements
+          <p className="text-muted-foreground mt-2 sm:mt-4 text-lg md:px-20">
+            I’ve had the opportunity to work with amazing people all across the
+            world on websites, characters and more. Here’s some of my recent
+            projects and work.
           </p>
         </div>
         <SlideInUp>

@@ -8,7 +8,8 @@ import SlideInUp from "../../components/animations/slideInUp"
 export const metadata = {
   title:
     "Web Development Portfolio | UK Freelance Developer Projects | KeelanJon",
-  description: "The software and art work of KeelanJon",
+  description:
+    "I’ve had the opportunity to work with amazing people all across the world on websites, characters and more. Here’s some of my recent projects and work.",
 }
 
 export default async function Work(props) {
@@ -25,8 +26,8 @@ export default async function Work(props) {
       <div className="container max-w-screen-lg mx-auto">
         <PageHeader
           title="Featured Work"
-          subtitle="Projects"
-          description="Showcasing some of my best projects and technical achievements"
+          subtitle="Latest Projects"
+          description="I’ve had the opportunity to work with amazing people all across the world on websites, characters and more. Here’s some of my recent projects and work."
         />
         <SlideInUp>
           <div className="max-w-screen-md mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">

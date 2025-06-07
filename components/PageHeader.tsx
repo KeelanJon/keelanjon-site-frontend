@@ -40,7 +40,7 @@ export default function PageHeader(props: Props) {
         <h1 className="mt-6 text-3xl sm:text-5xl md:text-5xl font-bold !leading-[1.2] tracking-tight">
           {title}
         </h1>
-          <p className="mt-4 text-muted-foreground text-md leading-relaxed md:px-20">
+          <p className="mt-4 text-muted-foreground text-lg leading-relaxed md:px-20">
             {description}
           </p>
           <div className="tech mt-6">
