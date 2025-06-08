@@ -6,11 +6,13 @@ import Image from "next/image";
 import Logos from "./logos";
 import TypingText from "./typingText";
 import Link from "next/link";
+import BackgroundScene from "@/components/threejs/background-scene"
 
 
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center px-6 pt-6 overflow-hidden">
+      <BackgroundScene />
       <div className="relative z-[1] text-center max-w-screen-md">
         <Image src={KeelanImage} alt="Image of KeelanJon" className="max-w-18 rounded-full mx-auto mt-12 mb-4 inset-shadow-sm"/>
         <Badge className="rounded-full border-none">
