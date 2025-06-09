@@ -15,6 +15,39 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+export async function generateMetadata() {
+  try {
+    const pageDataParams = "/about?populate=*"
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}${pageDataParams}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+      }
+    )
+    const { data } = await res.json()
+    const seoBlock = data.blocks.find(
+      (block) => block.__component === "shared.seo"
+    )
+
+    return {
+      title: seoBlock.metaTitle || `KeelanJon | ${data.title}`,
+      description:
+        seoBlock.metaDescription ||
+        "Based in Cardiff, KeelanJon is a freelance web developer and 3D generalist serving clients across Wales and the UK. Explore creative digital services and past work.",
+      openGraph: {
+        title: seoBlock.metaTitle,
+        description: seoBlock.metaDescription,
+      },
+    }
+  } catch (err) {
+    console.error(err)
+    console.error("Problem getting about page api data.")
+  }
+}
+
 export default function About() {
   const webDevTools = [
     {

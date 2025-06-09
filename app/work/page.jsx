@@ -1,22 +1,67 @@
 import PageHeader from "@/components/PageHeader"
 import { getProjects } from "../../lib/api/strapi/projectData"
 import ProjectCard from "../../components/ProjectCard"
-import { Badge } from "@/components/ui/badge"
-import Link from "next/link"
 import SlideInUp from "../../components/animations/slideInUp"
 
-export const metadata = {
-  title:
-    "Web Development Portfolio | UK Freelance Developer Projects | KeelanJon",
-  description:
-    "I’ve had the opportunity to work with amazing people all across the world on websites, characters and more. Here’s some of my recent projects and work.",
+export async function generateMetadata() {
+  try {
+    const pageDataParams = "/work?populate=*"
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}${pageDataParams}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+      }
+    )
+    const { data } = await res.json()
+    const seoBlock = data.blocks.find(
+      (block) => block.__component === "shared.seo"
+    )
+
+    return {
+      title: seoBlock.metaTitle || `KeelanJon | ${data.title}`,
+      description:
+        seoBlock.metaDescription ||
+        "Based in Cardiff, KeelanJon is a freelance web developer and 3D generalist serving clients across Wales and the UK. Explore creative digital services and past work.",
+      openGraph: {
+        title: seoBlock.metaTitle,
+        description: seoBlock.metaDescription,
+        images: seoBlock.coverImage ? [seoBlock.coverImage] : [],
+      },
+    }
+  } catch (err) {
+    console.error(err)
+    console.error("Problem getting work page api data.")
+  }
+}
+
+async function getWorkPageData() {
+  const params = "/work?populate[projects][populate]=*"
+
+  try {
+    const res = fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}${params}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+    })
+
+    const data = (await res).json()
+
+    return data
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 export default async function Work(props) {
   var projects = []
 
   try {
-    projects = await getProjects()
+    const data = await getWorkPageData()
+    projects = data.data.projects
   } catch (err) {
     console.error(err)
   }

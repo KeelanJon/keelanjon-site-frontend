@@ -5,6 +5,39 @@ import Logos from "../../components/logos"
 import TypingTextCustom from "../../components/typingTextCustom"
 import SlideInUp from "../../components/animations/slideInUp"
 
+export async function generateMetadata() {
+  try {
+    const pageDataParams = `/contact?populate=*`
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}${pageDataParams}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+      }
+    )
+    const { data } = await res.json()
+    const seoBlock = data.blocks.find(
+      (block) => block.__component === "shared.seo"
+    )
+
+    return {
+      title: seoBlock.metaTitle || `KeelanJon | ${data.title}`,
+      description:
+        seoBlock.metaDescription ||
+        "Based in Cardiff, KeelanJon is a freelance web developer and 3D generalist serving clients across Wales and the UK. Explore creative digital services and past work.",
+      openGraph: {
+        title: seoBlock.metaTitle,
+        description: seoBlock.metaDescription,
+      },
+    }
+  } catch (err) {
+    console.error(err)
+    console.error("Issue fetching page seo api data.")
+  }
+}
+
 const Contact = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center px-6 pt-6 overflow-hidden">

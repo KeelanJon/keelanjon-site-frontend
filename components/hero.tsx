@@ -23,10 +23,9 @@ const Hero = () => {
           Im Keelan, Freelance <div></div> <TypingText/>
         </h1>
         <p className="mt-6 text-[14px] md:text-lg">
-            Im a Web Developer and creative generalist offering 
-            end-to-end digital solutions for businesses. 
-            My core focus is on building high-performance websites 
-            with SEO and user experience in mind. 
+           Based in Cardiff, KeelanJon is a freelance web developer and 
+           3D generalist serving clients across Wales,the UK and beyond. 
+           Explore creative digital services and past work.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4 ">
           <Link href="/work">
