@@ -20,7 +20,7 @@ const Hero = () => {
           Frontend Engineer
         </Badge>
         <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-          Im Keelan, Freelance <div></div> <TypingText/>
+          I'm Keelan, Freelance <div></div> <TypingText/>
         </h1>
         <p className="mt-6 text-[14px] md:text-lg">
            Based in Cardiff, KeelanJon is a freelance web developer and 
