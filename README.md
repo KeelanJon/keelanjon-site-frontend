@@ -2,9 +2,11 @@
 
 This is the frontend for keelanjon.com, built with Next.js and styled using Tailwind CSS. It features a modern component-based UI powered by shadcn/ui and Magic UI, designed to be fast, responsive, and easy to update. The backend and content is powered by Strapi CMS, Hosted on [Strapi Cloud](https://strapi.io/cloud)
 
-#### Dev note:
+## 🔗 Related Repositories
 
-Please link any relevant Strapi backend repositories for this project within the Tech Stack section below.
+- **Frontend**: [keelanjon-site-frontend](https://github.com/KeelanJon/keelanjon-site-frontend)
+
+- **Backend**: [keelanjon-site-backend (Strapi)](https://github.com/KeelanJon/keelanjon-site-backend)
 
 ---
 
@@ -17,8 +19,6 @@ Please link any relevant Strapi backend repositories for this project within the
   - [shadcn/ui](https://ui.shadcn.com/)
   - [Magic UI](https://magicui.dev/)
 - **CMS**: [Strapi](https://strapi.io/)
-
-🔗 [Backend Repository (Strapi)](https://github.com/KeelanJon/keelanjon-site-backend)
 
 ---
 
