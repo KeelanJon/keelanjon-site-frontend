@@ -1,7 +1,10 @@
-# ⚡ KeelanJon Personal Website — Backend
+# ⚡ KeelanJon Personal Website — Frontend
 
-This is the strapi backend of my personal website, built to create,
-manage and uddate my personal website. Hosted on [Strapi Cloud](https://strapi.io/cloud)
+This is the frontend for keelanjon.com, built with Next.js and styled using Tailwind CSS. It features a modern component-based UI powered by shadcn/ui and Magic UI, designed to be fast, responsive, and easy to update. The backend and content is powered by Strapi CMS, Hosted on [Strapi Cloud](https://strapi.io/cloud)
+
+#### Dev note:
+
+Please link any relevant Strapi backend repositories for this project within the Tech Stack section below.
 
 ---
 
@@ -25,7 +28,7 @@ manage and uddate my personal website. Hosted on [Strapi Cloud](https://strapi.i
 
 ```bash
 git clone https://github.com/KeelanJon/keelanjon-site-frontend.git
-cd your-frontend-repo
+cd frontend
 ```
 
 ### 2. Install Dependencies
