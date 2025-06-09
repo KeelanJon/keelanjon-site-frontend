@@ -1,6 +1,7 @@
-# ⚡ KeelanJon Personal Website — Frontend
+# ⚡ KeelanJon Personal Website — Backend
 
-This is the frontend of my personal website, built to showcase my work in web development, 3D design, and content creation. It’s fast, minimal, and powered by a modern tech stack — connected to a Strapi headless CMS for content management.
+This is the strapi backend of my personal website, built to create,
+manage and uddate my personal website. Hosted on [Strapi Cloud](https://strapi.io/cloud)
 
 ---
 
@@ -14,7 +15,7 @@ This is the frontend of my personal website, built to showcase my work in web de
   - [Magic UI](https://magicui.dev/)
 - **CMS**: [Strapi](https://strapi.io/)
 
-🔗 [Backend Repository (Strapi)](https://github.com/your-username/your-strapi-backend) <!-- Replace with actual link -->
+🔗 [Backend Repository (Strapi)](https://github.com/KeelanJon/keelanjon-site-backend)
 
 ---
 
@@ -23,7 +24,7 @@ This is the frontend of my personal website, built to showcase my work in web de
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-frontend-repo.git
+git clone https://github.com/KeelanJon/keelanjon-site-frontend.git
 cd your-frontend-repo
 ```
 
@@ -35,9 +36,9 @@ npm install
 yarn install
 ```
 
-### 3. Create `.env.local`
+### 3. Create `.env.development`
 
-Create a `.env.local` file in the root of the project and add the following:
+Create a `.env.development` file in the root of the project and add the following:
 
 ```env
 NEXT_PUBLIC_STRAPI_URL=http://localhost:1337
@@ -45,8 +46,11 @@ STRAPI_API_TOKEN=your_strapi_api_token
 ```
 
 > ⚠️ Replace with your actual Strapi instance URL and token.
+> 🚀 https://localhost:1337 is the default Strapi local server port.
 
 ### 4. Run the Development Server
+
+Start the frontend development server:
 
 ```bash
 npm run dev
@@ -62,12 +66,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```
 .
-├── app/                 # Pages and layouts using Next.js App Router
+├── app/                 # Pages and layouts using Next.js App
 ├── components/          # Reusable React components
 ├── lib/                 # API utilities and helpers
 ├── public/              # Static files
 ├── styles/              # Tailwind and global styles
-├── .env.local           # Environment variables (not committed)
+├── .env.production      # Environment variables (not committed)
+├── .env.development     # Environment variables (not committed)
 ├── next.config.js       # Next.js configuration
 ```
 
@@ -89,7 +94,6 @@ You can deploy this frontend to platforms like:
 
 - [Vercel](https://vercel.com/)
 - [Netlify](https://netlify.com/)
-- [Render](https://render.com/)
 
 Just make sure to set up your environment variables there.
 
@@ -98,7 +102,7 @@ Just make sure to set up your environment variables there.
 ## 🧠 Notes
 
 - This frontend expects a working Strapi backend with collections like `home`, `projects`, and relational fields.
-- Data is fetched using `axios` and `async` server components.
+- Data is fetched using `fetch`, `axios` and `async` server components.
 
 ---
 
