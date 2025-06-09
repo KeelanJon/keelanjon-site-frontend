@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import Preloader from "@/components/preloader"
+import { Analytics } from "@vercel/analytics/next"
 
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
         <Preloader/>
+        <Analytics />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>        
             <Navbar />
             <main>{children}</main>
