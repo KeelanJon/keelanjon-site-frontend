@@ -20,7 +20,7 @@ export default function ImageCarousel(props) {
       carousel = props.blockData.carousel
     }
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
 
   const amountOfImages = carousel.length
