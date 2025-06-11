@@ -2,6 +2,7 @@ import PageHeader from "@/components/PageHeader"
 import { getProjects } from "../../lib/api/strapi/projectData"
 import ProjectCard from "../../components/ProjectCard"
 import SlideInUp from "../../components/animations/slideInUp"
+import ImageCarousel from "@/components/blocks/ImageCarousel"
 
 export async function generateMetadata() {
   try {
@@ -91,6 +92,7 @@ export default async function Work(props) {
             )}
           </div>
         </SlideInUp>
+        <ImageCarousel />
       </div>
     </section>
   )
