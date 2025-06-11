@@ -30,12 +30,12 @@ export default function RootLayout({
       <body className={`${geistSans.className} antialiased`}>
         <Preloader/>
         <Analytics />
-        <SpeedInsights/>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>        
             <Navbar />
             <main>{children}</main>
             <Footer />
         </ThemeProvider>
+        <SpeedInsights/>
       </body>
     </html>
   );
