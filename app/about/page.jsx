@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils"
 import { IoLogoYoutube, IoLogoInstagram } from "react-icons/io"
 import Image from "next/image"
 import Link from "next/link"
-import { PiSwordFill } from "react-icons/pi"
+import Markdown from "react-markdown"
+import SlideInUp from "@/components/animations/slideInUp"
 
 import TypingTextCustom from "../../components/typingTextCustom"
 import {
@@ -48,7 +49,31 @@ export async function generateMetadata() {
   }
 }
 
-export default function About() {
+async function getAboutPageData() {
+  try {
+    const pageDataParams = "/about?populate=*"
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}${pageDataParams}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+      }
+    )
+    const { data } = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+    console.error("Problem getting about page api data.")
+  }
+}
+
+export default async function About() {
+  const pageData = await getAboutPageData()
+
+  const { bio } = pageData ? pageData : ""
+
   const webDevTools = [
     {
       title: "HTML, CSS, Javascript",
@@ -183,7 +208,6 @@ export default function About() {
 
   return (
     <div className="about-page">
-      {/* <PageHeader title="About" description="Here yo" /> */}
       <section id="about" className="relative py-20 px-6 mt-24">
         <div className="max-w-screen-sm container mx-auto">
           <div className="">
@@ -192,47 +216,33 @@ export default function About() {
             {/* Content */}
             <div className="text-center">
               <Badge variant="secondary" className="mb-4 text-xs">
-                💫 Paladin Main
+                💫 About me
               </Badge>
               <h1 className="text-3xl font-bold mb-4 tracking-tight">
-                I see you're a curious one, let me tell you a little more. I'm a{" "}
+                Here's a little more about me. <div></div> I'm{" "}
                 <TypingTextCustom
                   words={[
-                    "coffee lover",
-                    2500,
-                    "gamer",
-                    2500,
-                    "husband",
-                    2500,
-                    "cool uncle",
-                    2500,
+                    "a coffee powered humanoid.",
+                    2000,
+                    "a loving husband (honest).",
+                    2000,
+                    "currently reading Terry Pratchet.",
+                    2000,
+                    "keen to work with you 👀",
+                    2000,
+                    "a Paladin Main.",
+                    2000,
+                    "a Blender Wizard!",
+                    2000,
+                    "a Tarnished.",
+                    2000,
                   ]}
                 />
               </h1>
 
-              <p className="text-muted-foreground mb-6 text-justify">
-                I’m a web developer and creative generalist based in South
-                Wales, UK, with over 5 years of experience blending design,
-                development, and visual storytelling. I build fast, modern
-                websites that prioritise user experience, responsive design, and
-                SEO—helping businesses stand out and grow online. With a strong
-                foundation in both code and creativity, I also craft 3D visuals
-                for web, games, and film, bridging the gap between functional
-                interfaces and compelling digital experiences.
-              </p>
-
-              <p className="text-muted-foreground mb-6 text-justify">
-                My journey started in a small Welsh town, where I grew up
-                sketching characters and loving technology. After studying
-                software engineering and working in IT, I found my stride in web
-                development—a place where logic met creativity. In 2020, I
-                discovered 3D art through Blender opening up a whole new world,
-                and sharing that passion online quickly grew into a thriving
-                creator career. Today, I combine my love for development and
-                design with a growing online audience of over 200,000 fellow
-                creatives, teaching, building, and exploring the edges of what’s
-                possible on the web.
-              </p>
+              <div className="text-muted-foreground mb-6 text-justify prose dark:prose-invert">
+                <Markdown>{bio}</Markdown>
+              </div>
 
               <div className="flex flex-wrap gap-4 justify-start">
                 <Link
@@ -260,11 +270,11 @@ export default function About() {
       </section>
 
       <section className="container mx-auto max-w-screen-sm mt-12 px-6 md:px-0">
-        <div className="tools">
+        <div className="tools text-center">
           <Badge variant="secondary" className="mb-4">
             My skill tree
           </Badge>
-          <h2 className="text-4xl font-bold mb-4 tracking-tight max-w-lg">
+          <h2 className="text-4xl font-bold mb-4 tracking-tight max-w-lg mx-auto">
             My Current Loadout of Tools, Tech & Creative Powers 🧙‍♂️
           </h2>
         </div>
