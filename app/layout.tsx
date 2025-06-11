@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import Preloader from "@/components/preloader"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 const geistSans = Geist({
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${geistSans.className} antialiased`}>
         <Preloader/>
         <Analytics />
+        <SpeedInsights/>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>        
             <Navbar />
             <main>{children}</main>
