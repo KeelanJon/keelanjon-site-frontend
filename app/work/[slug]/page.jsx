@@ -2,20 +2,23 @@ import { getProjectBySlug } from "../../../lib/api/strapi/projectData"
 import PageHeader from "../../../components/PageHeader"
 import ReactMarkdown from "react-markdown"
 import Image from "next/image"
-import SlideInUp from "../../../components/animations/slideInUp"
+
+// Block components for dynamic content creation.
 import VideoPlayer from "../../../components/blocks/video-player"
+import ImageCarousel from "@/components/blocks/ImageCarousel"
 
 // SEO Metadata export
 export async function generateMetadata({ params }) {
   const { slug } = await params
   const project = await getProjectBySlug(slug)
+
   const seoBlock = project.blocks.find(
     (block) => block.__component === "shared.seo"
   )
 
-  try {
-    const seoImage = project.featuredImage.formats.medium
+  // console.log(seoBlock)
 
+  try {
     return {
       title: seoBlock?.metaTitle || project.title,
       description: seoBlock?.metaDescription || project.description,
@@ -32,6 +35,8 @@ export async function generateMetadata({ params }) {
 export default async function ProjectPage({ params }) {
   const { slug } = await params
   const projectData = await getProjectBySlug(slug)
+
+  // console.log(projectData)
 
   const {
     title,
@@ -53,31 +58,39 @@ export default async function ProjectPage({ params }) {
         liveProject={live_project}
       />
 
-      <div className="featured-image relative mx-auto container px-6 md:px-32 h-48 md:h-[60vh] md:max-h-[700px]">
-        <SlideInUp>
+      <div className="featured-image relative mx-auto container px-6 h-68 md:h-[60vh] md:max-h-[600px] md:max-w-[1200px] rounded-lg">
+        <div className="relative px-6 w-full h-full ">
           <Image
             src={featuredImage.url}
-            width={1920}
-            height={1080}
-            quality={80}
+            fill
+            objectFit="cover"
+            quality={100}
             alt={featuredImage?.alternativeText || "Alt text"}
-            className="w-full h-full object-cover"
+            className="rounded-lg "
           />
-        </SlideInUp>
+        </div>
       </div>
-      <div className="content px-6">
-        <div className="container mx-auto prose dark:prose-invert py-12 md:py-24 md:px-12">
-          {blocks.map((block, index) => {
+      <div className="content">
+        <div className="container mx-auto py-12 md:py-24 md:px-12">
+          {blocks.map((block) => {
             const blockData = block.body
 
             switch (block.__component) {
               case "shared.rich-text":
-                return <ReactMarkdown key={block.id}>{blockData}</ReactMarkdown>
-                break
+                return (
+                  <section
+                    key={block.id}
+                    className="prose dark:prose-invert mx-auto px-6"
+                  >
+                    <ReactMarkdown>{blockData}</ReactMarkdown>
+                  </section>
+                )
               case "shared.video":
                 return <VideoPlayer videoSource={block.source} key={block.id} />
+              case "shared.carousel":
+                return <ImageCarousel key={block.id} blockData={block} />
               default:
-                return
+                return null
             }
           })}
         </div>
