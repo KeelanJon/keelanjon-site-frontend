@@ -72,10 +72,12 @@ export default function ImageCarousel(props) {
             )
           })}
         </CarouselContent>
-        <div className="slider-controls hidden md:inline">
-          <CarouselPrevious />
-          <CarouselNext />
-        </div>
+        {amountOfImages > 1 && (
+          <div className="slider-controls hidden md:inline">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
+        )}
       </Carousel>
     )
   }
