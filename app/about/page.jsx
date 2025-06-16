@@ -224,7 +224,7 @@ export default async function About() {
                   words={[
                     "a coffee powered humanoid.",
                     2000,
-                    "a loving husband (honest).",
+                    "a loving husband.",
                     2000,
                     "currently reading Terry Pratchet.",
                     2000,
