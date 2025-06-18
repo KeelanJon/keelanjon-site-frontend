@@ -1,7 +1,6 @@
 import KeelanJonImage from "../../public/keelanjon-square.jpg"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 import { IoLogoYoutube, IoLogoInstagram } from "react-icons/io"
 import Image from "next/image"
 import Link from "next/link"
@@ -208,133 +207,139 @@ export default async function About() {
 
   return (
     <div className="about-page">
-      <section id="about" className="relative py-20 px-6 mt-24">
-        <div className="max-w-screen-sm container mx-auto">
-          <div className="">
-            <ProfileImage />
+      <SlideInUp>
+        <section id="about" className="relative py-20 px-6 mt-24">
+          <div className="max-w-screen-sm container mx-auto">
+            <div className="">
+              <ProfileImage />
 
-            {/* Content */}
-            <div className="text-center">
-              <Badge variant="secondary" className="mb-4 text-xs">
-                💫 About me
-              </Badge>
-              <h1 className="text-3xl font-bold mb-4 tracking-tight">
-                Here's a little more about me. <div></div> I'm{" "}
-                <TypingTextCustom
-                  words={[
-                    "a coffee powered humanoid.",
-                    2000,
-                    "a loving husband (honest).",
-                    2000,
-                    "currently reading Terry Pratchet.",
-                    2000,
-                    "keen to work with you 👀",
-                    2000,
-                    "a Paladin Main.",
-                    2000,
-                    "a Blender Wizard!",
-                    2000,
-                    "a Tarnished.",
-                    2000,
-                  ]}
-                />
-              </h1>
+              {/* Content */}
+              <div className="text-center">
+                <Badge variant="secondary" className="mb-4 text-xs">
+                  💫 About me
+                </Badge>
+                <h1 className="text-3xl font-bold mb-4 tracking-tight">
+                  Here's a little more about me. <div></div> I'm{" "}
+                  <TypingTextCustom
+                    words={[
+                      "a coffee powered humanoid.",
+                      2000,
+                      "a loving husband.",
+                      2000,
+                      "currently reading Terry Pratchet.",
+                      2000,
+                      "keen to work with you 👀",
+                      2000,
+                      "a Paladin Main.",
+                      2000,
+                      "a Blender Wizard!",
+                      2000,
+                      "a Tarnished.",
+                      2000,
+                    ]}
+                  />
+                </h1>
 
-              <div className="text-muted-foreground mb-6 text-justify prose dark:prose-invert">
-                <Markdown>{bio}</Markdown>
-              </div>
+                <div className="text-muted-foreground mb-6 text-justify prose dark:prose-invert">
+                  <Markdown>{bio}</Markdown>
+                </div>
 
-              <div className="flex flex-wrap gap-4 justify-start">
-                <Link
-                  href="https://www.instagram.com/keelanjon_"
-                  target="_blank"
-                >
-                  <Button className="rounded-full cursor-pointer">
-                    <IoLogoInstagram />
-                    Instagram
-                  </Button>
-                </Link>
-                <Link href="https://youtube.com/@keelanjon" target="_blank">
-                  <Button
-                    variant="outline"
-                    className="rounded-full cursor-pointer"
+                <div className="flex flex-wrap gap-4 justify-start">
+                  <Link
+                    href="https://www.instagram.com/keelanjon_"
+                    target="_blank"
                   >
-                    <IoLogoYoutube />
-                    YouTube
-                  </Button>
-                </Link>
+                    <Button className="rounded-full cursor-pointer">
+                      <IoLogoInstagram />
+                      Instagram
+                    </Button>
+                  </Link>
+                  <Link href="https://youtube.com/@keelanjon" target="_blank">
+                    <Button
+                      variant="outline"
+                      className="rounded-full cursor-pointer"
+                    >
+                      <IoLogoYoutube />
+                      YouTube
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="container mx-auto max-w-screen-sm mt-12 px-6 md:px-0">
-        <div className="tools text-center">
-          <Badge variant="secondary" className="mb-4">
-            My skill tree
-          </Badge>
-          <h2 className="text-4xl font-bold mb-4 tracking-tight max-w-lg mx-auto">
-            My Current Loadout of Tools, Tech & Creative Powers 🧙‍♂️
-          </h2>
-        </div>
-        <Accordion type="single" collapsible className="w-full transition-all">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>
-              Languages, Frameworks and Libraries
-            </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              {webDevTools.map((tool, index) => {
-                return (
-                  <div className="tool" key={index}>
-                    <h2 className="font-semibold">{tool.title}</h2>
-                    <p>{tool.description}</p>
-                  </div>
-                )
-              })}
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2" className="cursor-pointer">
-            <AccordionTrigger>Video Production</AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              {videoProductionTools.map((tool, index) => {
-                return (
-                  <div className="tool" key={index}>
-                    <h2 className="font-semibold">{tool.title}</h2>
-                    <p>{tool.description}</p>
-                  </div>
-                )
-              })}
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Graphic Design</AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              {graphicDesignTools.map((tool, index) => {
-                return (
-                  <div className="tool" key={index}>
-                    <h2 className="font-semibold">{tool.title}</h2>
-                    <p>{tool.description}</p>
-                  </div>
-                )
-              })}
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-4">
-            <AccordionTrigger>Creative Utilities</AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              {utilityTools.map((tool, index) => {
-                return (
-                  <div className="tool" key={index}>
-                    <h2 className="font-semibold">{tool.title}</h2>
-                    <p>{tool.description}</p>
-                  </div>
-                )
-              })}
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </section>
+        <section className="container mx-auto max-w-screen-sm mt-12 px-6 md:px-0">
+          <div className="tools text-center">
+            <Badge variant="secondary" className="mb-4">
+              My skill tree
+            </Badge>
+            <h2 className="text-4xl font-bold mb-4 tracking-tight max-w-lg mx-auto">
+              My Current Loadout of Tools, Tech & Creative Powers 🧙‍♂️
+            </h2>
+          </div>
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full transition-all"
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                Languages, Frameworks and Libraries
+              </AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-4 text-balance">
+                {webDevTools.map((tool, index) => {
+                  return (
+                    <div className="tool" key={index}>
+                      <h2 className="font-semibold">{tool.title}</h2>
+                      <p>{tool.description}</p>
+                    </div>
+                  )
+                })}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2" className="cursor-pointer">
+              <AccordionTrigger>Video Production</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-4 text-balance">
+                {videoProductionTools.map((tool, index) => {
+                  return (
+                    <div className="tool" key={index}>
+                      <h2 className="font-semibold">{tool.title}</h2>
+                      <p>{tool.description}</p>
+                    </div>
+                  )
+                })}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Graphic Design</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-4 text-balance">
+                {graphicDesignTools.map((tool, index) => {
+                  return (
+                    <div className="tool" key={index}>
+                      <h2 className="font-semibold">{tool.title}</h2>
+                      <p>{tool.description}</p>
+                    </div>
+                  )
+                })}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Creative Utilities</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-4 text-balance">
+                {utilityTools.map((tool, index) => {
+                  return (
+                    <div className="tool" key={index}>
+                      <h2 className="font-semibold">{tool.title}</h2>
+                      <p>{tool.description}</p>
+                    </div>
+                  )
+                })}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </section>
+      </SlideInUp>
     </div>
   )
 }

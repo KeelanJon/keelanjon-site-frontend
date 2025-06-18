@@ -79,7 +79,7 @@ export default async function Work(props) {
               <>
                 {projects.map((project) => {
                   return (
-                    <div href={`work/${project.slug}`} key={project.documentId}>
+                    <div key={project.documentId}>
                       <ProjectCard data={project} />
                     </div>
                   )

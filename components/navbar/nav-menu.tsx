@@ -3,10 +3,10 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { NavigationMenuProps } from "@radix-ui/react-navigation-menu";
-import Link from "next/link";
+} from "@/components/ui/navigation-menu"
+import { cn } from "@/lib/utils"
+import { NavigationMenuProps } from "@radix-ui/react-navigation-menu"
+import Link from "next/link"
 
 export const NavMenu = ({ className, ...props }: NavigationMenuProps) => (
   <NavigationMenu
@@ -26,9 +26,14 @@ export const NavMenu = ({ className, ...props }: NavigationMenuProps) => (
       </NavigationMenuItem>
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
+          <Link href="/blog">Blog</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink asChild>
           <Link href="/contact">Contact</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>
   </NavigationMenu>
-);
+)
