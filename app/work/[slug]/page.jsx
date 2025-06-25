@@ -36,8 +36,6 @@ export default async function ProjectPage({ params }) {
   const { slug } = await params
   const projectData = await getProjectBySlug(slug)
 
-  // console.log(projectData)
-
   const {
     title,
     subtitle,
