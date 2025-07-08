@@ -73,51 +73,67 @@ export default async function About() {
 
   const { bio } = pageData ? pageData : ""
 
+  //Note to self, I'll need to add these to the cms to clean up the code.
   const webDevTools = [
     {
-      title: "HTML, CSS, Javascript",
+      title: "💀 HTML, CSS, Javascript",
       description:
-        "The ancient trinity—like sword, shield, and spellbook—foundational to any web mage.",
+        "The holy trinity that started it all. No matter how fancy frameworks get, you always come back to these three fundamentals.",
     },
     {
-      title: "React",
+      title: "⚛️ React",
       description:
-        "My go-to spell for summoning powerful UI components and crafting responsive magic portals.",
+        "My daily driver for building interfaces. Once you get the hang of hooks and components, everything else feels clunky.",
     },
     {
-      title: "Nextjs",
+      title: "🚀 Next.js",
       description:
-        "The enchanted framework that lets me build fast-loading castles with server-side sorcery.",
+        "React's cooler older sibling. Server-side rendering, static generation, and routing that actually makes sense.",
     },
     {
-      title: "Strapi",
+      title: "🗡️ Strapi",
       description:
-        "A friendly headless beast that delivers content payloads straight to the frontlines.",
+        "The headless CMS that doesn't make you want to pull your hair out. Content management without the usual headaches.",
     },
     {
-      title: "Sass",
+      title: "💅 Sass",
       description:
-        "A sassy extension of CSS—my cloak of variables, mixins, and nested wizardry.",
+        "CSS with superpowers. Variables, nesting, mixins—basically everything CSS should have been from the start.",
     },
     {
-      title: "Gatsbyjs",
+      title: "⚡ Gatsby.js",
       description:
-        "The sprinter of the frontend realm—pre-rendered pages at light speed with a side of GraphQL brew.",
+        "Static sites that feel dynamic. GraphQL data layer and performance optimization that'll make your lighthouse scores sing.",
     },
     {
-      title: "Stylised Components",
+      title: "💎 Styled Components",
       description:
-        "Magical incantations embedded directly into components—perfect for enchanting UI on the fly.",
+        "CSS-in-JS done right. No more hunting through stylesheets—your styles live right where they're used.",
     },
     {
-      title: "TailwindCSS",
+      title: "🎨 TailwindCSS",
       description:
-        "Utility-first armor that turns me into a layout battlemage—fast, flexible, and stylishly deadly.",
+        "Utility classes that click once you get them. Faster than writing custom CSS, and surprisingly maintainable.",
     },
     {
-      title: "WordPress",
+      title: "📚 WordPress",
       description:
-        "The old tome of the web—robust, versatile, and still a reliable ally for client quests.",
+        "The reliable workhorse. Sure, it's not the sexiest, but it still powers a third of the web for good reason.",
+    },
+    {
+      title: "🐘 PostgreSQL",
+      description:
+        "The database that actually handles complex queries without breaking a sweat. Reliable, fast, and feature-rich.",
+    },
+    {
+      title: "🚂 Express.js",
+      description:
+        "Minimal and flexible—just how I like my backend frameworks. Gets out of your way and lets you build.",
+    },
+    {
+      title: "🟢 Node.js",
+      description:
+        "JavaScript everywhere. Same language, same mental model, from frontend to backend to build tools.",
     },
   ]
 
@@ -177,31 +193,64 @@ export default async function About() {
     },
   ]
 
+  const threeDDesignTools = [
+    {
+      title: "🍩 Blender",
+      description:
+        "The Swiss Army knife of 3D creation. Free, powerful, and with enough features to make your head spin faster than the default cube everyone deletes.",
+    },
+    {
+      title: "🗿 ZBrush",
+      description:
+        "Digital clay sculpting at its finest. Where polygons become art and every stroke feels like molding reality itself — if reality had millions of subdivisions.",
+    },
+    {
+      title: "🎨 Substance Painter",
+      description:
+        "The magic wand for texturing. Turn bland 3D models into photorealistic masterpieces with materials so convincing you'll want to touch your screen.",
+    },
+    {
+      title: "🎮 Unreal Engine",
+      description:
+        "Epic's powerhouse for creating worlds that look better than reality. From indie games to blockbuster films — it's where dreams get their pixels.",
+    },
+    {
+      title: "🔧 Unity",
+      description:
+        "The versatile workhorse of game development. Whether you're building mobile puzzlers or VR experiences, Unity makes the impossible feel achievable.",
+    },
+  ]
+
   const utilityTools = [
     {
-      title: "📂 Notion",
+      title: "📝 Notion",
       description:
-        "My quest log, idea vault, and organizational HQ. I use it to plan projects, track progress, manage content, log books, and basically run my entire private ops — all in one clean, flexible space.",
+        "The digital brain that never forgets. Part notebook, part database, part life organizer — it's where chaos meets beautiful, structured productivity.",
     },
     {
-      title: "🧠 ChatGPT",
+      title: "🤖 ChatGPT",
       description:
-        "My digital spellbook for brainstorming, polishing copy, and solving creative blocks. Whether debugging or drafting, it's a key part of my workflow arsenal.",
+        "My AI brainstorming buddy who never runs out of coffee or ideas. Perfect for breaking through creative blocks and rubber duck debugging at 3 AM.",
     },
     {
-      title: "🧠 Google Drive & Docs",
+      title: "🧠 Claude",
       description:
-        "The cloud scrolls I rely on for sharing, storing, and collaborating across devices and dimensions. Perfect for reference dumps and team work.",
+        "The thoughtful AI assistant who actually listens. Great for refining ideas, writing help, and those moments when you need a second opinion from silicon.",
     },
     {
-      title: "🔄 HandBrake",
+      title: "☁️ Google Drive",
       description:
-        "A lean, mean compression machine. Keeps my video files light and upload-ready without sacrificing quality — great for clean archiving too.",
+        "The cloud that follows me everywhere. File syncing, collaboration, and that satisfying feeling of never losing work again — even when my laptop doesn't cooperate.",
     },
     {
-      title: "🧼 PureRef",
+      title: "🖼️ PureRef",
       description:
-        "My visual pinboard for references and inspo. Whether I’m building a character or crafting a scene, it keeps my creative eye focused.",
+        "The ultimate reference image organizer. Drag, drop, and arrange visual inspiration without the desktop chaos — because artists need their moodboards tidy.",
+    },
+    {
+      title: "📡 Postman",
+      description:
+        "The API whisperer that makes backend communication feel like a conversation. Testing endpoints has never been this smooth or satisfying.",
     },
   ]
 
@@ -325,6 +374,19 @@ export default async function About() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
+              <AccordionTrigger>3D Production</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-4 text-balance">
+                {threeDDesignTools.map((tool, index) => {
+                  return (
+                    <div className="tool" key={index}>
+                      <h2 className="font-semibold">{tool.title}</h2>
+                      <p>{tool.description}</p>
+                    </div>
+                  )
+                })}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5">
               <AccordionTrigger>Creative Utilities</AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 text-balance">
                 {utilityTools.map((tool, index) => {
