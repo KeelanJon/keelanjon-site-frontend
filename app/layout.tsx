@@ -1,42 +1,40 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next"
+import { Geist } from "next/font/google"
+import "./globals.css"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+import { ThemeProvider } from "@/components/theme-provider"
 import Preloader from "@/components/preloader"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-
 const geistSans = Geist({
   subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
   title: "KeelanJon | Freelance Web Developer UK",
   description:
     "I'm a UK based Web Developer and creative generalist offering end-to-end digital solutions for businesses. My core focus is on building high-performance websites with SEO and user experience in mind.",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-        <Preloader/>
+        <Preloader />
         <Analytics />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>        
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
         </ThemeProvider>
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
     </html>
-  );
+  )
 }

@@ -1,12 +1,11 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { IoLogoYoutube, IoLogoInstagram } from "react-icons/io";
-import Image from "next/image";
-import { HTMLAttributes } from "react";
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { IoLogoYoutube, IoLogoInstagram } from "react-icons/io"
+import Image from "next/image"
+import { HTMLAttributes } from "react"
 import KeelanImage from "../public/keelanjon-square.jpg"
-import Link from "next/link";
-
+import Link from "next/link"
 
 const About = () => {
   return (
@@ -24,14 +23,14 @@ const About = () => {
             <h2 className="text-4xl font-bold mb-4 tracking-tight">
               Im passionate about design, code and tech.
             </h2>
-      
+
             <p className="text-muted-foreground mb-6 text-justify">
-              Im a web developer and creative generalist based in South Wales, UK, 
-              with <b>5+ years of experience.</b> I build fast, modern websites focused on 
-              UX, responsive design, and SEO—helping businesses grow online. I also
-               have a background in 3D art, creating visuals for web, games, and 
-               film. As a content creator, Ive grown a following of over 200,000+
-               fellow creatives, sharing free educational content.
+              I&apos;m a software developer and creative generalist based in
+              South Wales, UK. I build everything from web applications to
+              high-profile client websites for major charities and companies,
+              alongside 3D projects spanning game assets, digital media, and 3D
+              printing. As a content creator, I&apos;ve built a community of
+              over 200,000 creatives by sharing free educational resources.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-start">
@@ -42,8 +41,11 @@ const About = () => {
                 </Button>
               </Link>
               <Link href="https://youtube.com/@keelanjon" target="_blank">
-                <Button variant="outline" className="rounded-full cursor-pointer">
-                  <IoLogoYoutube/>
+                <Button
+                  variant="outline"
+                  className="rounded-full cursor-pointer"
+                >
+                  <IoLogoYoutube />
                   YouTube
                 </Button>
               </Link>
@@ -52,8 +54,8 @@ const About = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 const ProfileImage = ({
   className,
@@ -64,5 +66,5 @@ const ProfileImage = ({
       <Image src={KeelanImage} alt="" className="object-cover" fill />
     </div>
   </div>
-);
-export default About;
+)
+export default About

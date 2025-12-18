@@ -52,13 +52,13 @@ export function MobileMenu() {
                 </Button>
               </Link>
             </DrawerClose>
-            <DrawerClose asChild>
+            {/* <DrawerClose asChild>
               <Link href="/blog">
                 <Button variant="outline" className="w-full h-12">
                   Blog
                 </Button>
               </Link>
-            </DrawerClose>
+            </DrawerClose> */}
             <DrawerClose asChild>
               <Link href="/contact">
                 <Button variant="outline" className="w-full h-12">
