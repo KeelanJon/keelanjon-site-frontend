@@ -71,7 +71,7 @@ export default async function Work(props) {
         <PageHeader
           title="Featured Work"
           subtitle="Latest Projects"
-          description="I’ve had the opportunity to work with amazing people all across the world on websites, characters and more. Here’s some of my recent projects and work."
+          description="I've collaborated with talented teams worldwide on websites, character design, and more. Below are selected projects—many larger works remain confidential due to NDAs. Contact me to discuss my full portfolio."
         />
         <SlideInUp>
           <div className="max-w-screen-md mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">

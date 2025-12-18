@@ -81,6 +81,11 @@ export default async function About() {
         "The holy trinity that started it all. No matter how fancy frameworks get, you always come back to these three fundamentals.",
     },
     {
+      title: "🔴 Laravel",
+      description:
+        "PHP's elegant framework that makes backend development feel like poetry. Artisan commands, Eloquent ORM. Honestly the easiest backend framework I've used.",
+    },
+    {
       title: "⚛️ React",
       description:
         "My daily driver for building interfaces. Once you get the hang of hooks and components, everything else feels clunky.",
@@ -99,11 +104,6 @@ export default async function About() {
       title: "💅 Sass",
       description:
         "CSS with superpowers. Variables, nesting, mixins—basically everything CSS should have been from the start.",
-    },
-    {
-      title: "⚡ Gatsby.js",
-      description:
-        "Static sites that feel dynamic. GraphQL data layer and performance optimization that'll make your lighthouse scores sing.",
     },
     {
       title: "💎 Styled Components",
@@ -222,6 +222,11 @@ export default async function About() {
   ]
 
   const utilityTools = [
+    {
+      title: "🖱️ Cursor",
+      description:
+        "The AI-powered code editor that feels like pair programming with a genius. Context-aware suggestions, intelligent refactoring, and code generation that actually understands your project.",
+    },
     {
       title: "📝 Notion",
       description:

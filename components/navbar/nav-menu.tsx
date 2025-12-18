@@ -24,11 +24,11 @@ export const NavMenu = ({ className, ...props }: NavigationMenuProps) => (
           <Link href="/about">About</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
-      <NavigationMenuItem>
+      {/* <NavigationMenuItem>
         <NavigationMenuLink asChild>
           <Link href="/blog">Blog</Link>
         </NavigationMenuLink>
-      </NavigationMenuItem>
+      </NavigationMenuItem> */}
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
           <Link href="/contact">Contact</Link>

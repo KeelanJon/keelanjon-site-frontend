@@ -4,7 +4,7 @@ import { Zap } from "lucide-react"
 import KeelanImage from "../public/keelanjon-square.jpg"
 import Image from "next/image"
 import Logos from "./logos"
-import TypingText from "./typingText"
+// import TypingText from "./typingText"
 import Link from "next/link"
 import BackgroundScene from "@/components/threejs/background-scene"
 
@@ -23,13 +23,13 @@ const Hero = () => {
           <h4>Full Stack Developer</h4>
         </Badge>
         <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-          I&apos;m Keelan, Freelance
-          <div></div> <TypingText />
+          I&apos;m Keelan, Software Developer & 3D Generalist
+          {/* <div></div> <TypingText /> */}
         </h1>
         <p className="mt-6 text-[14px] md:text-lg">
-          Based in Cardiff, KeelanJon is a freelance web developer and 3D
-          generalist serving clients across Wales,the UK and beyond. Explore
-          creative digital services and past work.
+          I&apos;m a Software Developer and 3D generalist serving clients across
+          Wales, the UK and beyond. Here on my website, you can explore my
+          creative services and past work.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4 ">
           <Link href="/work">
