@@ -9,7 +9,6 @@ export async function POST(request: NextRequest) {
   }
 
   const body = await request.json()
-  console.log("[revalidate] webhook payload:", JSON.stringify(body))
   const model: string = body?.model
   const slug: string | undefined = body?.entry?.slug
 
