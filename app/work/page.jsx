@@ -12,6 +12,7 @@ export async function generateMetadata() {
         headers: {
           Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
         },
+        next: { tags: ["projects", "work-page"] },
       }
     )
     const { data } = await res.json()
@@ -45,6 +46,7 @@ async function getWorkPageData() {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
       },
+      next: { tags: ["projects", "work-page"] },
     })
 
     const data = (await res).json()

@@ -1,7 +1,6 @@
 import About from "@/components/about";
 import Hero from "@/components/hero";
 import FeaturedProjects from "@/components/featured-projects"
-import axios from "axios"
 
 
 export async function generateMetadata() {
@@ -40,13 +39,18 @@ export async function generateMetadata() {
 async function getHomePageData() {
   try {
 
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/home?populate[projects][populate]=*`, {
-     headers: {
-     Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-  },
-  })
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/home?populate[projects][populate]=*`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      next: { tags: ["projects", "home-page"] },
+    }
+  )
 
-  return res.data.data
+  const { data } = await res.json()
+  return data
 
   }catch(err) {
     console.error(err)
